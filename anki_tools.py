@@ -15,7 +15,7 @@ def remove_anki_id(file_path, pattern):
     try:
         # 使用Path处理文件路径
         path = Path(file_path)
-        print(path)
+        # print(path)
         with open(path, 'r', encoding='utf-8') as file:
             content = file.read()
             

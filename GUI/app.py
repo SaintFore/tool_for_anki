@@ -68,7 +68,7 @@ class App(customtkinter.CTk, TkinterDnD.DnDWrapper):
         # 这里可以添加你的文件处理逻辑
         print("处理以下文件:")
         for path in self.file_paths:
-            # print(path)
+            print(path)
             remove_anki_id_and_normalize(path)  # 调用处理函数
         
         # 更新UI

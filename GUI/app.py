@@ -8,7 +8,7 @@ class App(customtkinter.CTk, TkinterDnD.DnDWrapper):
         super().__init__()
         self.TkdndVersion = TkinterDnD._require(self)  # 初始化DnD功能
         
-        self.title("文件拖放演示")
+        self.title("Anki 笔记处理工具")
         self.geometry("600x400")
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(1, weight=1)

@@ -2,11 +2,7 @@
 import pytest
 import tempfile
 from pathlib import Path
-import sys
-import os
-# 添加项目根目录到 Python 路径
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-import anki_tools
+from .. import anki_tools
 
 @pytest.fixture
 def test_file():

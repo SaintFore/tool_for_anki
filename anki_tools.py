@@ -66,7 +66,7 @@ def normalize_empty_lines(file_path):
                 empty_line_count = 0
                 normalized_lines.append(line)
 
-        new_path = path.with_stem(f"{path.stem}_no_empty_line")
+        new_path = path.with_stem(f"{path.stem}_normalized")
         with open(new_path, 'w', encoding='utf-8') as file:
             file.write('\n'.join(normalized_lines))
         

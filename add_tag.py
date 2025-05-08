@@ -38,9 +38,3 @@ def add_tag(file_path, tag):
 
     with open(new_path, 'w', encoding='utf-8') as file:
         file.writelines(handle)
-
-tag = "Scard"
-
-file_path = "英语名句.md"
-
-new_path = add_tag(file_path, tag)

@@ -28,7 +28,7 @@ jobs:
     
     - name: Build executable
       run: |
-        pyinstaller --name="Anki笔记处理工具" --windowed --add-data="gui;gui" --add-data="anki_tools.py;." --hidden-import=tkinterdnd2 --hidden-import=customtkinter --hidden-import=anki_tools main.py
+        pyinstaller --name="Anki笔记处理工具" --windowed --add-data="gui;gui" --add-data="anki_tools.py;." --hidden-import=tkinterdnd2 --hidden-import=customtkinter --hidden-import=anki_tools --hidden-import=add_tag main.py
     
     - name: Create ZIP
       run: |

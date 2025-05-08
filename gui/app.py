@@ -71,7 +71,7 @@ class TabView(customtkinter.CTkTabview):
         results = []
         for path in file_paths:
             try:
-                # new_path = add_tag(path, tag)
+                new_path = add_tag(path, tag)
                 results.append((True, f"已添加标签 #{tag}: {Path(path).name}"))
             except Exception as e:
                 results.append((False, f"处理失败: {Path(path).name} - {str(e)}"))

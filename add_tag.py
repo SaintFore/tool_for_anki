@@ -16,25 +16,30 @@ def add_tag(file_path, tag):
 
     path = remove_anki_id_and_normalize(file_path)
     print(path)
-    with open(path, 'r', encoding='utf-8') as file:
+    with open(path, "r", encoding="utf-8") as file:
         lines = file.readlines()
-    
+
     sign = 0
     handle = []
 
     for line in lines:
-        if line.strip() == '':
+        if line.strip() == "":
             sign += 1
             handle.append(line)
-        elif sign == 2 and line.strip() != '':
+        elif sign == 2 and line.strip() != "":
             line = line.strip() + f" #{tag}\n"
             sign = 0
             handle.append(line)
         else:
             sign = 0
             handle.append(line)
-    
-    new_path = path.with_stem(f"{path.stem}_tagged")
 
-    with open(new_path, 'w', encoding='utf-8') as file:
+    # new_path = path.with_stem(f"{path.stem}_tagged")
+    # with open(new_path, "w", encoding="utf-8") as file:
+    #     file.writelines(handle)
+    # return new_path
+
+    # 直接覆盖原文件
+    with open(path, "w", encoding="utf-8") as file:
         file.writelines(handle)
+    return path

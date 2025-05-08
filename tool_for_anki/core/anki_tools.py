@@ -1,3 +1,8 @@
+"""
+Anki笔记工具函数
+
+包含处理Anki笔记的函数，如移除ID、规范化空行等。
+"""
 import re
 from pathlib import Path
 
@@ -36,7 +41,7 @@ def remove_anki_id(file_path, pattern):
         return path
 
     except Exception as e:
-        print(f"处理文件时出错: {e}")
+        print(f"处理文件{file_path}时出错: {e}")
         return None
 
 
@@ -84,7 +89,7 @@ def normalize_empty_lines(file_path):
         return path
 
     except Exception as e:
-        print(f"处理文件时出错: {e}")
+        print(f"处理文件{file_path}时出错: {e}")
         return None
 
 

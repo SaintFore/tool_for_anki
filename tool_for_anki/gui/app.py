@@ -1,8 +1,13 @@
+"""
+GUI应用程序
+
+使用CustomTkinter和TkinterDnD构建的GUI应用程序。
+"""
 import customtkinter
 from tkinterdnd2 import DND_FILES, TkinterDnD
 from pathlib import Path
-from anki_tools import remove_anki_id_and_normalize
-from add_tag import add_tag
+from tool_for_anki.core.anki_tools import remove_anki_id_and_normalize
+from tool_for_anki.core.add_tag import add_tag
 
 
 class App(customtkinter.CTk, TkinterDnD.DnDWrapper):

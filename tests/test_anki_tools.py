@@ -2,7 +2,7 @@
 import pytest
 import tempfile
 from pathlib import Path
-from .. import anki_tools
+from tool_for_anki.core import anki_tools
 
 @pytest.fixture
 def test_file():

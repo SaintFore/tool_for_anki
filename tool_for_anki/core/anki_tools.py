@@ -48,6 +48,7 @@ def remove_anki_id(file_path, pattern):
 def normalize_empty_lines(file_path):
     """
     将文件中的空行规范化为两个空行
+    必须得至少有一个空行才能规范化为两个空行
 
     Args:
         file_path: 文件路径

@@ -4,7 +4,7 @@ Anki笔记处理工具
 用于管理和处理Anki笔记文件的工具集。
 """
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 # 导出核心函数，便于直接从包导入
 from tool_for_anki.core.anki_tools import remove_anki_id_and_normalize

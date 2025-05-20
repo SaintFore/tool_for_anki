@@ -30,8 +30,8 @@ def br_remove(file_path):
             elif line.strip() == "":
                 continue
             else:
-                if "____" in line:
-                    line = line.replace("____", "`      `")
+                if "_" in line:
+                    line = line.replace("_", chr(0xFF3F))
                 handled_lines.append(line.strip())
 
         with open(path, "w", encoding="utf-8") as f:

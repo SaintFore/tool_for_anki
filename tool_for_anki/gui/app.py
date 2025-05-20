@@ -7,7 +7,9 @@ import customtkinter
 from tkinterdnd2 import DND_FILES, TkinterDnD
 from pathlib import Path
 from tool_for_anki.core.anki_tools import remove_anki_id_and_normalize
+from tool_for_anki.core.anki_tools import normalize_empty_lines
 from tool_for_anki.core.add_tag import add_tag
+from tool_for_anki.core.anki_br_remove import br_remove
 
 
 class App(customtkinter.CTk, TkinterDnD.DnDWrapper):
@@ -31,9 +33,10 @@ class TabView(customtkinter.CTkTabview):
         # 创建标签页
         self.add("添加标签")
         self.add("标准化")
+        self.add("移除分隔符")
 
         # 配置标签页网格
-        for tab_name in ["添加标签", "标准化"]:
+        for tab_name in ["添加标签", "标准化", "移除分隔符"]:
             self.tab(tab_name).grid_columnconfigure(0, weight=1)
             self.tab(tab_name).grid_rowconfigure(0, weight=1)
 
@@ -55,6 +58,15 @@ class TabView(customtkinter.CTkTabview):
             extra_widget_creator=self._create_tag_widgets
         )
         self.tag_frame.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+
+        # 创建移除分隔符处理框架
+        self.br_frame = FileProcessingFrame(
+            self.tab("移除分隔符"),
+            title="将文件拖放到下方区域",
+            button_text="移除分隔符",
+            process_function=self._remove_br_from_files
+        )
+        self.br_frame.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
 
     def _normalize_files(self, file_paths):
         """标准化文件的业务逻辑"""
@@ -95,6 +107,18 @@ class TabView(customtkinter.CTkTabview):
         self.tag_entry.pack(pady=(5, 10))
         
         return (self.tag_label, self.tag_entry)
+    
+    def _remove_br_from_files(self, file_paths):
+        """移除分隔符的业务逻辑"""
+        results = []
+        for path in file_paths:
+            try:
+                br_remove(path)
+                newpath = normalize_empty_lines(path)
+                results.append((True, f"处理成功: {Path(path).name}"))
+            except Exception as e:
+                results.append((False, f"处理失败: {Path(path).name} - {str(e)}"))
+        return results
 
 
 class FileProcessingFrame(customtkinter.CTkFrame):

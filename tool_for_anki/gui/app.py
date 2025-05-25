@@ -169,7 +169,7 @@ class FileProcessingFrame(customtkinter.CTkFrame):
         
         # 获取文件路径
         file_paths = event.data # 会带有{}符号
-        print(f"拖放的文件路径: {file_paths}")
+        # print(f"拖放的文件路径: {file_paths}")
         
         file_paths = file_paths.strip("{}")  # 去除{}符号
         self.file_paths = file_paths.split(" ") if " " in file_paths else [file_paths]

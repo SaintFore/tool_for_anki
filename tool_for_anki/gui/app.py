@@ -168,7 +168,10 @@ class FileProcessingFrame(customtkinter.CTkFrame):
         self.drop_area.delete("1.0", "end")
         
         # 获取文件路径
-        file_paths = event.data
+        file_paths = event.data # 会带有{}符号
+        print(f"拖放的文件路径: {file_paths}")
+        
+        file_paths = file_paths.strip("{}")  # 去除{}符号
         self.file_paths = file_paths.split(" ") if " " in file_paths else [file_paths]
         
         # 显示拖放的文件

@@ -368,17 +368,25 @@ pip install -r requirements.txt --force-reinstall
 ### 🚀 贡献流程
 
 ```mermaid
-gitgraph
-    commit id: "1. Fork 项目"
-    branch feature
-    checkout feature
-    commit id: "2. 创建功能分支"
-    commit id: "3. 开发新功能"
-    commit id: "4. 编写测试"
-    commit id: "5. 提交变更"
-    checkout main
-    merge feature
-    commit id: "6. 合并到主分支"
+flowchart TD
+    A[🍴 Fork 项目] --> B[🌿 创建功能分支]
+    B --> C[💻 开发新功能]
+    C --> D[🧪 编写测试]
+    D --> E[✏️ 提交变更]
+    E --> F[📤 推送分支]
+    F --> G[🔗 创建 Pull Request]
+    G --> H[🔍 代码审查]
+    H --> I[✅ 合并到主分支]
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+    style G fill:#e0f2f1
+    style H fill:#fff8e1
+    style I fill:#e8f5e8
 ```
 
 ### 📋 详细步骤
@@ -453,14 +461,44 @@ furnished to do so, subject to the following conditions:
 
 ## 💖 致谢
 
-- [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) - 提供现代化GUI组件
-- [TkinterDnD2](https://github.com/pmgagne/tkinterdnd2) - 提供拖放功能支持
-- 所有贡献者和用户
+特别感谢以下项目和贡献者：
+
+### 🛠️ 开源项目
+
+| 项目 | 描述 | 许可证 |
+|------|------|--------|
+| [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) | 🎨 提供现代化GUI组件 | MIT |
+| [TkinterDnD2](https://github.com/pmgagne/tkinterdnd2) | 🔄 提供拖放功能支持 | BSD |
+| [Pytest](https://github.com/pytest-dev/pytest) | 🧪 提供测试框架 | MIT |
+
+### 👥 贡献者
+
+<a href="https://github.com/yourusername/tool_for_anki/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yourusername/tool_for_anki" />
+</a>
+
+### 💝 特别致谢
+
+- 📚 所有提供反馈和建议的用户
+- 🐛 报告问题的测试者
+- 🌟 给予Star支持的开发者们
 
 ---
 
-📌 **注意**：此工具仅处理本地Anki笔记文件，不直接与Anki数据库交互。
+<div align="center">
+
+### 📞 联系我们
+
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-red?style=flat-square&logo=github)](https://github.com/yourusername/tool_for_anki/issues)
+[![Email](https://img.shields.io/badge/Email-Contact-blue?style=flat-square&logo=gmail)](mailto:your-email@example.com)
+[![Discord](https://img.shields.io/badge/Discord-Chat-purple?style=flat-square&logo=discord)](https://discord.gg/your-server)
+
+📌 **注意**：此工具仅处理本地 Anki 笔记文件，不直接与 Anki 数据库交互。
+
+💡 **如有问题或建议，欢迎** [**提交 Issue**](https://github.com/yourusername/tool_for_anki/issues) **或加入我们的讨论！**
 
 ---
 
-💡 如有问题或建议，欢迎 [提交Issue](https://github.com/yourusername/tool_for_anki/issues)
+<sub>🚀 **让 Anki 笔记管理更简单，让学习更高效！** ⭐</sub>
+
+</div>

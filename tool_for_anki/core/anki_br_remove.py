@@ -6,6 +6,7 @@
 from pathlib import Path
 
 
+
 def br_remove(file_path):
     """
     移除 Anki ID，返回新文件路径
@@ -25,7 +26,7 @@ def br_remove(file_path):
         handled_lines = []
 
         for line in lines:
-            if line.strip() == "---":
+            if len(line.strip()) >= 3 and line.strip().replace("-","") == "":
                 handled_lines.append("\n")
             elif line.strip() == "":
                 continue
